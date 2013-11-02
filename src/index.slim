@@ -1,0 +1,33 @@
+doctype html
+
+html ng-app=""
+
+  head
+    script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"
+    script src="js/todo.js"
+    link href="css/normalize.css" rel="stylesheet"
+    link href="css/foundation.css" rel="stylesheet"
+    link href="css/todo.css" rel="stylesheet"
+
+  body
+
+    h2 Todo
+
+    div ng-controller="TodoCtrl"
+
+      span=> "{{ remaining() }} of {{ todos.length }}"
+
+      | [
+      a href="" ng-click="archive()" archive
+      | ]
+
+      ul.unstyled
+
+        li ng-repeat="todo in todos"
+          label
+            input ng-model="todo.done" type="checkbox"
+              span[class = "done-{{todo.done}}"]= "{{ todo.text }}"
+
+      form ng-submit="addTodo()"
+        input ng-model="todoText" placeholder="add new todo here" size="30" type="text"
+          input.btn-primary type="submit" value="add"
