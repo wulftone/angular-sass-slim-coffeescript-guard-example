@@ -3,11 +3,14 @@ doctype html
 html ng-app=""
 
   head
-    script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"
-    script src="js/todo.js"
     link href="css/normalize.css" rel="stylesheet"
     link href="css/foundation.css" rel="stylesheet"
     link href="css/todo.css" rel="stylesheet"
+
+    script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"
+    script src="js/todo.js"
+    script src="js/vendor/custom.modernizr.js"
+
 
   body
 
@@ -31,3 +34,30 @@ html ng-app=""
       form ng-submit="addTodo()"
         input ng-model="todoText" placeholder="add new todo here" size="30" type="text"
           input.btn-primary type="submit" value="add"
+
+
+  javascript:
+    document.write('<script src=' +
+    ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+    '.js><\/script>')
+
+  script src="js/foundation.min.js"
+  / script src="js/foundation/foundation.js"
+  / script src="js/foundation/foundation.alerts.js"
+  / script src="js/foundation/foundation.clearing.js"
+  / script src="js/foundation/foundation.cookie.js"
+  / script src="js/foundation/foundation.dropdown.js"
+  / script src="js/foundation/foundation.forms.js"
+  / script src="js/foundation/foundation.joyride.js"
+  / script src="js/foundation/foundation.magellan.js"
+  / script src="js/foundation/foundation.orbit.js"
+  / script src="js/foundation/foundation.reveal.js"
+  / script src="js/foundation/foundation.section.js"
+  / script src="js/foundation/foundation.tooltips.js"
+  / script src="js/foundation/foundation.topbar.js"
+  / script src="js/foundation/foundation.interchange.js"
+  / script src="js/foundation/foundation.placeholder.js"
+  / script src="js/foundation/foundation.abide.js"
+
+  javascript:
+    $(document).foundation();

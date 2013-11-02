@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="">
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-    <script src="js/todo.js"></script>
     <link href="css/normalize.css" rel="stylesheet" />
     <link href="css/foundation.css" rel="stylesheet" />
     <link href="css/todo.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/vendor/custom.modernizr.js"></script>
   </head>
   <body>
     <h2>
@@ -23,4 +24,13 @@
       </form>
     </div>
   </body>
+  <script type="text/javascript">
+    document.write('<script src=' +
+    ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+    '.js><\/script>')
+  </script>
+  <script src="js/foundation.min.js"></script>
+  <script type="text/javascript">
+    $(document).foundation();
+  </script>
 </html>
