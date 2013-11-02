@@ -4,23 +4,30 @@
     <link href="css/normalize.css" rel="stylesheet" />
     <link href="css/foundation.css" rel="stylesheet" />
     <link href="css/todo.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/vendor/custom.modernizr.js"></script>
   </head>
-  <body>
-    <h2>
-      Todo
+  <body class="row">
+    <h2 class="small-3 column">
+      Todos
     </h2>
-    <div ng-controller="TodoCtrl">
-      <span>{{ remaining() }} of {{ todos.length }}</span> [<a href="" ng-click="archive()">archive</a>]
-      <ul class="unstyled">
+    <div class="app small-9 column" ng-controller="TodoCtrl">
+      <div class="row">
+        <span>{{ remaining() }} of {{ todos.length }}</span> [<a href="" ng-click="archive()">archive</a>]
+      </div>
+      <ul class="row no-bullet">
         <li ng-repeat="todo in todos">
-          <label><input ng-model="todo.done" type="checkbox"><span class="done-{{todo.done}}">{{ todo.text }}</span></input></label>
+          <label><input class="inline" ng-model="todo.done" type="checkbox" /><span class="done-{{todo.done}}">{{ todo.text }}</span></label>
         </li>
       </ul>
-      <form ng-submit="addTodo()">
-        <input ng-model="todoText" placeholder="add new todo here" size="30" type="text"><input class="btn-primary" type="submit" value="add" /></input>
+      <form class="row collapse" ng-submit="addTodo()">
+        <div class="small-9 column">
+          <input ng-model="todoText" placeholder="Add new todo here" size="30" type="text" />
+        </div>
+        <div class="small-3 column">
+          <input class="postfix radius btn-primary" type="submit" value="Add" />
+        </div>
       </form>
     </div>
   </body>

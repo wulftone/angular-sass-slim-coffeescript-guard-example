@@ -7,33 +7,38 @@ html ng-app=""
     link href="css/foundation.css" rel="stylesheet"
     link href="css/todo.css" rel="stylesheet"
 
-    script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"
+    script src="js/vendor/angular.min.js"
     script src="js/todo.js"
     script src="js/vendor/custom.modernizr.js"
 
 
-  body
+  body.row
 
-    h2 Todo
+    h2.small-3.column Todos
 
-    div ng-controller="TodoCtrl"
+    div.app.small-9.column ng-controller="TodoCtrl"
 
-      span=> "{{ remaining() }} of {{ todos.length }}"
+      div.row
+        span=> "{{ remaining() }} of {{ todos.length }}"
 
-      | [
-      a href="" ng-click="archive()" archive
-      | ]
+        | [
+        a href="" ng-click="archive()" archive
+        | ]
 
-      ul.unstyled
+      ul.row.no-bullet
 
         li ng-repeat="todo in todos"
           label
-            input ng-model="todo.done" type="checkbox"
-              span[class = "done-{{todo.done}}"]= "{{ todo.text }}"
+            input.inline ng-model="todo.done" type="checkbox"
+            span[class = "done-{{todo.done}}"]= "{{ todo.text }}"
 
-      form ng-submit="addTodo()"
-        input ng-model="todoText" placeholder="add new todo here" size="30" type="text"
-          input.btn-primary type="submit" value="add"
+
+      form.row.collapse ng-submit="addTodo()"
+        div.small-9.column
+          input ng-model="todoText" placeholder="Add new todo here" size="30" type="text"
+
+        div.small-3.column
+          input.postfix.radius.btn-primary type="submit" value="Add"
 
 
   javascript:
